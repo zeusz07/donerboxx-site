@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonerBoxx Bağış</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
+        input { padding: 10px; width: 200px; margin-bottom: 10px; }
+        button { padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>DonerBoxx Bağış</h1>
+    <p>Destek olmak için bir miktar girin:</p>
+    <input type="number" id="amount" placeholder="USD cinsinden miktar" />
+    <br>
+    <button id="donateButton">Bağış Yap</button>
+
+    <script>
+        const stripe = Stripe("pk_test_51R4UxLFAk3cBFOLLigi5HUlp9ewoNUhCfDTR0wDzNa41aUtaPZdZgcm7jaP9yJL4Vt6XtczDfKqBELBJCCLuGqyc00K4zZgaqw");
+
+        document.getElementById("donateButton").addEventListener("click", () => {
+            const amount = document.getElementById("amount").value;
+            if (!amount || amount <= 0) {
+                alert("Lütfen geçerli bir miktar girin.");
+                return;
+            }
+            fetch("https://donerboxx-stripe.glitch.me/create-checkout-session", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ amount: amount })
+            })
+            .then(response => response.json())
+            .then(session => stripe.redirectToCheckout({ sessionId: session.id }))
+            .catch(error => console.error("Stripe yönlendirme hatası:", error));
+        });
+    </script>
+</body>
+</html>
