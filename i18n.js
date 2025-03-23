@@ -1,0 +1,1 @@
+const translations = { tr: {}, en: {} };
