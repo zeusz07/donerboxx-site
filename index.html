@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DonerBoxx | Destek Ol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f8fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    h1 {
+      color: #e74c3c;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #e74c3c;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #cf3d2b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DonerBoxx</h1>
+    <p>Bağış yapmak istediğiniz tutarı girin:</p>
+    <input type="number" id="amount" placeholder="USD cinsinden miktar" />
+    <button id="donateButton">Bağış Yap</button>
+  </div>
+
+  <script>
+    const stripe = Stripe("pk_test_51R4UxLFAk3cBFOLLigi5HUlp9ewoNUhCfDTR0wDzNa41aUtaPZdZgcm7jaP9yJL4Vt6XtczDfKqBELBJCCLuGqyc00K4zZgaqw");
+
+    document.getElementById("donateButton").addEventListener("click", () => {
+      const amount = document.getElementById("amount").value;
+      if (!amount || amount <= 0) {
+        alert("Lütfen geçerli bir miktar girin.");
+        return;
+      }
+      fetch("https://donerboxx-stripe.glitch.me/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ amount: amount })
+      })
+      .then(response => response.json())
+      .then(session => stripe.redirectToCheckout({ sessionId: session.id }))
+      .catch(error => alert("Stripe bağlantısı kurulamadı: " + error.message));
+    });
+  </script>
+</body>
+</html>
