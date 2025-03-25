@@ -1,1 +1,0 @@
-module.exports = { stripe: { public_key: '', secret_key: '' } };
