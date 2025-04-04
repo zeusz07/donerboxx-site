@@ -1,53 +1,19 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    padding: 40px;
+    text-align: center;
 }
 header {
-    background: linear-gradient(45deg, #4caf50, #2e7d32);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-}
-.btn {
-    background-color: white;
-    color: #4caf50;
-    padding: 10px 20px;
-    border: none;
-    text-decoration: none;
-    font-weight: bold;
+    margin-bottom: 30px;
 }
 form {
-    background: white;
-    padding: 20px;
-    margin: 40px auto;
-    width: 90%;
     max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: auto;
 }
-label {
+input, select, button {
     display: block;
+    width: 100%;
     margin: 10px 0;
-}
-input, select {
-    width: 100%;
     padding: 10px;
-    margin-top: 5px;
-}
-button {
-    background: #4caf50;
-    color: white;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    margin-top: 15px;
-    cursor: pointer;
-}
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #ddd;
 }

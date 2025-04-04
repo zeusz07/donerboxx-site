@@ -1,4 +1,4 @@
-document.getElementById('donation-form').addEventListener('submit', function (e) {
+document.getElementById('donation-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert("Thank you for your donation!");
+    alert('Donation submitted!');
 });
