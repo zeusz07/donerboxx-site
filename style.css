@@ -1,53 +1,62 @@
-
-body, html {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #1e3c72, #2a5298);
-  height: 100%;
-  color: white;
 }
-
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
 .hero {
+  background: url('https://source.unsplash.com/1600x900/?donation,charity') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+}
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: url('https://source.unsplash.com/1600x900/?charity') no-repeat center center/cover;
 }
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+.hero-box {
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 40px;
-  border-radius: 15px;
+  border-radius: 20px;
+  color: white;
   text-align: center;
-  max-width: 400px;
   width: 90%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+.hero-box h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
 }
-
-input, select {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
+.hero-box p {
+  margin-bottom: 20px;
+  font-size: 1em;
 }
-
-button {
+form select, form input {
+  width: 100%;
   padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+form button {
   background-color: #00c896;
   color: white;
-  font-size: 16px;
   border: none;
-  border-radius: 5px;
+  padding: 14px;
+  font-size: 1em;
+  margin-top: 10px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
-
-button:hover {
-  background-color: #00b285;
+form button:hover {
+  background-color: #00a97b;
 }
