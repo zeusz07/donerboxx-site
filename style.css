@@ -1,19 +1,53 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #f8f9fa, #e9ecef);
-    padding: 40px;
-    text-align: center;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  height: 100%;
+  color: white;
 }
-header {
-    margin-bottom: 30px;
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?charity') no-repeat center center/cover;
 }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
 form {
-    max-width: 400px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
 }
-input, select, button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
+
+input, select {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 12px;
+  background-color: #00c896;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00b285;
 }
