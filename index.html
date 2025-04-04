@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DonerBoxx</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>DonerBoxx - Secure Donations</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Change the World with a Click</h1>
-      <p>Your support brings real impact. Join our mission today.</p>
-      <a href="#donate" class="hero-button">Donate Now</a>
-    </div>
-  </section>
+    <header>
+        <h1>Support a Cause with DonerBoxx</h1>
+        <p>Your contribution makes a difference.</p>
+        <a href="#donate" class="btn">Donate Now</a>
+    </header>
+    <main>
+        <section id="donate">
+            <form id="donation-form">
+                <label>Currency:
+                    <select id="currency">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="AED">AED</option>
+                    </select>
+                </label>
+                <label>Amount: <input type="number" id="amount" required /></label>
+                <label>Card Info: <input type="text" id="card" placeholder="Card Number"/></label>
+                <button type="submit">Donate</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 DonerBoxx. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

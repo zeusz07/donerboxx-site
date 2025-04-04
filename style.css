@@ -1,42 +1,53 @@
-.hero {
-  position: relative;
-  height: 100vh;
-  background: url('https://cdn.coverr.co/videos/coverr-earth-1578/1080p.mp4') no-repeat center center/cover;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
 }
-.hero .overlay {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+header {
+    background: linear-gradient(45deg, #4caf50, #2e7d32);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
 }
-.hero-content {
-  position: relative;
-  text-align: center;
-  z-index: 2;
-  max-width: 700px;
+.btn {
+    background-color: white;
+    color: #4caf50;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
 }
-.hero-content h1 {
-  font-size: 3em;
-  margin-bottom: 0.5em;
+form {
+    background: white;
+    padding: 20px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.hero-content p {
-  font-size: 1.2em;
-  margin-bottom: 1em;
+label {
+    display: block;
+    margin: 10px 0;
 }
-.hero-button {
-  display: inline-block;
-  padding: 15px 30px;
-  background: #ff4c60;
-  color: white;
-  font-size: 1.1em;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
 }
-.hero-button:hover {
-  background: #e84355;
+button {
+    background: #4caf50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
 }
