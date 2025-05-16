@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate Now | DonerBoxx</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">Support a Cause that Matters</h1>
+      <p class="hero-description">Your donation makes a real impact. Join thousands of donors supporting change across the world.</p>
+      <form id="payment-form">
+        <label for="amount">Donation Amount ($)</label>
+        <input type="number" id="amount" placeholder="Enter amount (e.g., 50)" min="1" required />
+
+        <div id="payment-element"></div>
+        <button id="submit">Donate Securely</button>
+        <div id="error-message"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="donor-wall">
+    <h2>Recent Donors 💖</h2>
+    <ul id="donor-list">
+      <!-- Donor names will be added here dynamically -->
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 DonerBoxx. All rights reserved.</p>
+  </footer>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="script.js"></script>
+</body>
+</html>

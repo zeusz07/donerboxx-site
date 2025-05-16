@@ -1,0 +1,109 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f8fa;
+  color: #1a1a1a;
+}
+
+.hero-section {
+  padding: 80px 20px;
+  background: linear-gradient(145deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 20px;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  background: white;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#payment-element {
+  margin-bottom: 20px;
+}
+
+button#submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button#submit:hover {
+  background: #1a5ee8;
+}
+
+#error-message {
+  color: red;
+  margin-top: 12px;
+}
+
+.donor-wall {
+  padding: 60px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.donor-wall h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#donor-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#donor-list li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 18px;
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f0f0f0;
+  font-size: 14px;
+}
