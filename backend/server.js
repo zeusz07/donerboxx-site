@@ -21,12 +21,12 @@ app.get('/', (req, res) => {
 app.post('/create-checkout-session', async (req, res) => {
   try {
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: req.body.items,
-      mode: 'payment',
-      success_url: 'https://example.com/success.html',
-      cancel_url: 'https://example.com/cancel.html',
-    });
+  payment_method_types: ['card'],
+  line_items: req.body.items,
+  mode: 'payment',
+  success_url: 'https://example.com/success.html',
+  cancel_url: 'https://example.com/cancel.html',
+  });
 
     res.json({ url: session.url });
   } catch (err) {
@@ -42,5 +42,5 @@ app.get('*', (req, res) => {
 // Sunucuyu başlat
 const PORT = process.env.PORT || 4242;
 app.listen(PORT, () => {
-  console.log(`erver is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
