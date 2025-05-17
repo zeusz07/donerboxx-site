@@ -24,8 +24,8 @@ app.post('/create-checkout-session', async (req, res) => {
       payment_method_types: ['card'],
       line_items: req.body.items,
       mode: 'payment',
-      success_url: 'https://donerboxx.com/success.html',
-      cancel_url: 'https://donerboxx.com/cancel.html',
+      success_url: 'https://example.com/success',
+      cancel_url: 'https://example.com/cancel',
     });
 
     res.json({ url: session.url });
@@ -42,5 +42,5 @@ app.get('*', (req, res) => {
 // Sunucuyu başlat
 const PORT = process.env.PORT || 4242;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`erver is running on port ${PORT}`);
 });
