@@ -34,6 +34,11 @@ app.post('/create-checkout-session', async (req, res) => {
   }
 });
 
+// Bilinmeyen tüm yolları index.html'e yönlendir (404 çözümü)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
+
 // Sunucuyu başlat
 const PORT = process.env.PORT || 4242;
 app.listen(PORT, () => {
