@@ -5,19 +5,16 @@ const cors = require('cors');
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-// Orijinleri izin ver
 app.use(cors());
 app.use(express.json());
-
-// Statik dosyaları frontend klasöründen sun
 app.use(express.static(path.join(__dirname, 'frontend')));
 
-// Ana sayfa yönlendirmesi
+// Ana sayfa
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
 
-// Ödeme endpointi
+// Stripe ödeme endpointi
 app.post('/create-checkout-session', async (req, res) => {
   try {
     const session = await stripe.checkout.sessions.create({
@@ -32,7 +29,7 @@ app.post('/create-checkout-session', async (req, res) => {
             unit_amount: 5000, // $50.00
           },
           quantity: 1,
-        }
+        },
       ],
       mode: 'payment',
       success_url: 'https://example.com/success.html',
@@ -41,17 +38,18 @@ app.post('/create-checkout-session', async (req, res) => {
 
     res.json({ url: session.url });
   } catch (err) {
+    console.error('Stripe Error:', err.message);
     res.status(500).json({ error: err.message });
   }
 });
 
-// Bilinmeyen tüm yolları index.html'e yönlendir (404 çözümü)
+// Diğer tüm yolları index.html'e yönlendir (SPA uyumlu)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
 
 // Sunucuyu başlat
-const PORT = process.env.PORT || 4242;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
